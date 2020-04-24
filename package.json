@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "next dev --port=4000",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "standard --fix"
   },
   "dependencies": {
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "standard": "^14.3.3"
   }
 }
