@@ -1,0 +1,5 @@
+.berkshire {
+  font-family: 'Berkshire Swash', serif;
+}
+
+@import '../node_modules/tachyons/css/tachyons.css'
