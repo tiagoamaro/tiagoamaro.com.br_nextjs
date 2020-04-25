@@ -10,6 +10,9 @@ export default function Layout ({ children }) {
         {/* Icons */}
         <link rel='apple-touch-icon-precomposed' sizes='144x144' href='/icons/touch-icon-144-precomposed.png' />
         <link rel='shortcut icon' href='/icons/favicon.png' />
+
+        {/* Fonts */}
+        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Berkshire+Swash' />
       </Head>
       <NavBar />
       {children}
