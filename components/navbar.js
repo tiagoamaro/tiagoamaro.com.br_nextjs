@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function NavBar () {
   return (
     <nav className='pure-g'>
-      <div className='pure-u-1 pure-u-lg-1-5 berkshire'>Tiago Padrela Amaro</div>
+      <div className='pure-u-1 pure-u-lg-1-5 berkshire green-casal'>Tiago Padrela Amaro</div>
       <div className='pure-u-1 pure-u-lg-1-5 text-center'>
         <Link href='/'><a>Tweets</a></Link>
       </div>
