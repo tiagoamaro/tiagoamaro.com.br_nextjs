@@ -1,4 +1,4 @@
-@import './fonts.css';
-@import './utilities.css';
 @import '../node_modules/purecss/build/pure.css';
 @import '../node_modules/purecss/build/grids-responsive.css';
+@import './fonts.css';
+@import './utilities.css';
