@@ -13,7 +13,7 @@ export default function Layout ({ children }) {
         <link rel='shortcut icon' href='/icons/favicon.png' />
 
         {/* Fonts */}
-        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Berkshire+Swash' />
+        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Berkshire+Swash&text=Tiago%20Padrela%20Amaro' />
       </Head>
       <Container>
         <NavBar />
