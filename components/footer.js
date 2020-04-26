@@ -8,6 +8,14 @@ export default function Footer () {
           {year} - Built with NextJS and PureCSS. Hosted with on Vercel.
         </small>
       </div>
+
+      <style jsx>
+        {`
+          .text-center {
+            text-align: center;
+          }
+        `}
+      </style>
     </div>
   )
 }
