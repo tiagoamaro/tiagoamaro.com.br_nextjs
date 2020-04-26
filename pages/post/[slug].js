@@ -6,13 +6,15 @@ import * as matter from 'gray-matter'
 import path from 'path'
 import fs from 'fs'
 import { postFiles, POSTS_DIRECTORY } from '../../lib/postFiles'
+import PostBody from '../../components/postBody'
+import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post ({ post }) {
   const { content } = post
 
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <PostBody content={content} />
     </Layout>
   )
 }
@@ -25,11 +27,7 @@ export async function getStaticProps ({ params }) {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const { content: markdownContent } = matter(fileContents)
-
-  const content = remark()
-    .use(remarkHtml)
-    .processSync(markdownContent)
-    .toString()
+  const content = await markdownToHtml(markdownContent)
 
   return {
     props: {
@@ -40,7 +38,7 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export async function getStaticPaths (slug) {
+export async function getStaticPaths () {
   const paths = postFiles()
     .map(filename => postSlug(filename))
     .map(slug => ({ params: { slug } }))
