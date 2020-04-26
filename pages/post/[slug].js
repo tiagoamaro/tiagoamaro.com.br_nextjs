@@ -1,7 +1,5 @@
 import Layout from '../../components/layout'
 import { postSlug, filenameFromSlug } from '../../lib/postSlug'
-import remark from 'remark'
-import remarkHtml from 'remark-html'
 import * as matter from 'gray-matter'
 import path from 'path'
 import fs from 'fs'
