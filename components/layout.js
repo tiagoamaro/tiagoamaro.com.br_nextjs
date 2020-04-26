@@ -1,6 +1,7 @@
 import Container from '../components/container'
 import Head from 'next/head'
 import NavBar from '../components/navbar'
+import Footer from '../components/footer'
 
 export default function Layout ({ children }) {
   return (
@@ -18,6 +19,7 @@ export default function Layout ({ children }) {
       <Container>
         <NavBar />
         {children}
+        <Footer />
       </Container>
     </>
   )
