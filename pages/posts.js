@@ -5,47 +5,40 @@ import path from 'path'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import * as matter from 'gray-matter'
+import { postSlug } from '../lib/postSlug'
+import { postFiles, POSTS_DIRECTORY } from '../lib/postFiles'
 
-const POST_SLUG_REGEX = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})-(?<slug>.*)\.md/
+function PostLink ({ slug, title }) {
+  return (
+    <Link key={slug} href='/post/[slug]' as={`/post/${slug}`}>
+      <a>{title}</a>
+    </Link>
+  )
+}
 
-/**
- * @param {String} filename. Expected filename pattern such as 2020-01-01-name-of-post.md
- * @returns {String}
- */
-const postSlug = (filename) => {
-  const { day, month, year, slug } = filename.match(POST_SLUG_REGEX).groups
-  return `/${year}/${month}/${day}/${slug}`
+function PostList ({ posts }) {
+  return posts.map(post => <PostLink key={post.slug} {...post} />)
 }
 
 export default function Posts ({ posts }) {
-  const postLinks = () => {
-    return posts.map(post => {
-      const { title } = post
-      const slug = postSlug(post.filename)
-      return <Link key={slug} href={slug}><a>{title}</a></Link>
-    })
-  }
-
   return (
     <Layout>
       <NextSeo title='Posts' />
-      {postLinks()}
+      <PostList posts={posts} />
     </Layout>
   )
 }
 
 export async function getStaticProps () {
-  const postsDirectory = path.join(process.cwd(), 'posts')
-  const filenames = fs.readdirSync(postsDirectory).reverse() // Files are read in ASC order by name. We want DESC
-
-  const posts = filenames.map(filename => {
-    const filePath = path.join(postsDirectory, filename)
+  const posts = postFiles().map(filename => {
+    const filePath = path.join(POSTS_DIRECTORY, filename)
     const fileContents = fs.readFileSync(filePath, 'utf8')
 
+    const slug = postSlug(filename)
     const { title } = matter(fileContents).data
 
     return {
-      filename,
+      slug,
       title
     }
   })
@@ -60,7 +53,7 @@ export async function getStaticProps () {
 Posts.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
-      filename: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired
     })
   )
