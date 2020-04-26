@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 
-export default function Post ({ content }) {
+export default function PostBody ({ content }) {
   return <div dangerouslySetInnerHTML={{ __html: content }} />
 }
 
-Post.propTypes = {
+PostBody.propTypes = {
   content: PropTypes.string.isRequired
 }
