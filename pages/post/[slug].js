@@ -8,12 +8,14 @@ import PostTitle from '../../components/postTitle'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { postFromFile } from '../../lib/postFromFile'
 import Comments from '../../components/comments'
+import { NextSeo } from 'next-seo'
 
 export default function Post ({ post }) {
   const { content, date, title } = post
 
   return (
     <Layout>
+      <NextSeo title={title} description={title} />
       <PostTitle title={title} date={date} />
       <PostBody content={content} />
       <hr />
