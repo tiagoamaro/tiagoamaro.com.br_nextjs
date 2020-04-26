@@ -7,6 +7,7 @@ import PostBody from '../../components/postBody'
 import PostTitle from '../../components/postTitle'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { postFromFile } from '../../lib/postFromFile'
+import Comments from '../../components/comments'
 
 export default function Post ({ post }) {
   const { content, date, title } = post
@@ -15,6 +16,8 @@ export default function Post ({ post }) {
     <Layout>
       <PostTitle title={title} date={date} />
       <PostBody content={content} />
+      <hr />
+      <Comments />
     </Layout>
   )
 }
