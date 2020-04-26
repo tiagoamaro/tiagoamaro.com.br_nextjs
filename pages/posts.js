@@ -4,9 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import * as matter from 'gray-matter'
-import { postSlug } from '../lib/postSlug'
 import { postFiles, POSTS_DIRECTORY } from '../lib/postFiles'
+import { postFromFile } from '../lib/postFromFile'
 
 function PostLink ({ slug, title }) {
   return (
@@ -16,8 +15,22 @@ function PostLink ({ slug, title }) {
   )
 }
 
+function PostListItem ({ post }) {
+  const { date } = post
+
+  return (
+    <li>
+      <PostLink {...post} /> {date}
+    </li>
+  )
+}
+
 function PostList ({ posts }) {
-  return posts.map(post => <PostLink key={post.slug} {...post} />)
+  return (
+    <ul>
+      {posts.map(post => <PostListItem key={post.slug} post={post} />)}
+    </ul>
+  )
 }
 
 export default function Posts ({ posts }) {
@@ -34,10 +47,10 @@ export async function getStaticProps () {
     const filePath = path.join(POSTS_DIRECTORY, filename)
     const fileContents = fs.readFileSync(filePath, 'utf8')
 
-    const slug = postSlug(filename)
-    const { title } = matter(fileContents).data
+    const { date, slug, title } = postFromFile({ filename, fileContents })
 
     return {
+      date,
       slug,
       title
     }
@@ -53,6 +66,7 @@ export async function getStaticProps () {
 Posts.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
+      date: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired
     })

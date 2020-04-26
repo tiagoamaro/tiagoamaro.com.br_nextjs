@@ -1,17 +1,19 @@
 import Layout from '../../components/layout'
 import { postSlug, filenameFromSlug } from '../../lib/postSlug'
-import * as matter from 'gray-matter'
 import path from 'path'
 import fs from 'fs'
 import { postFiles, POSTS_DIRECTORY } from '../../lib/postFiles'
 import PostBody from '../../components/postBody'
+import PostTitle from '../../components/postTitle'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { postFromFile } from '../../lib/postFromFile'
 
 export default function Post ({ post }) {
-  const { content } = post
+  const { content, title } = post
 
   return (
     <Layout>
+      <PostTitle title={title} />
       <PostBody content={content} />
     </Layout>
   )
@@ -24,13 +26,14 @@ export async function getStaticProps ({ params }) {
   const fullPath = path.join(POSTS_DIRECTORY, filename)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-  const { content: markdownContent } = matter(fileContents)
-  const content = await markdownToHtml(markdownContent)
+  const { content: rawContent, title } = postFromFile({ filename, fileContents })
+  const content = await markdownToHtml(rawContent)
 
   return {
     props: {
       post: {
-        content
+        content,
+        title
       }
     }
   }
