@@ -1,46 +1,20 @@
-import { useState } from 'react'
 import Link from 'next/link'
 
 export default function NavBar () {
-  const [isOpen, toggleOpen] = useState(false)
-  const mobileNavBarClass = isOpen ? 'is-active' : ''
-
   return (
-    <nav className='navbar' role='navigation' aria-label='main navigation'>
-      <div className='navbar-brand'>
-        <a role='button' className='navbar-burger burger' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample' onClick={() => toggleOpen(!isOpen)}>
-          <span aria-hidden='true' />
-          <span aria-hidden='true' />
-          <span aria-hidden='true' />
-        </a>
+    <nav class='pure-g'>
+      <div class='pure-u-1 pure-u-lg-1-5 text-center berkshire'>Tiago Padrela Amaro</div>
+      <div class='pure-u-1 pure-u-lg-1-5 text-center'>
+        <Link href='/'>Tweets</Link>
       </div>
-
-      <div id='navbarBasicExample' className={`navbar-menu ${mobileNavBarClass}`}>
-        <div className='navbar-start'>
-          <Link href='/'>
-            <a className='navbar-item'>
-              Tweets
-            </a>
-          </Link>
-
-          <Link href='/about'>
-            <a className='navbar-item'>
-              About
-            </a>
-          </Link>
-
-          <Link href='/posts'>
-            <a className='navbar-item'>
-              Posts
-            </a>
-          </Link>
-
-          <Link href='/quotes'>
-            <a className='navbar-item'>
-              Quotes
-            </a>
-          </Link>
-        </div>
+      <div class='pure-u-1 pure-u-lg-1-5 text-center'>
+        <Link href='/posts'>Posts</Link>
+      </div>
+      <div class='pure-u-1 pure-u-lg-1-5 text-center'>
+        <Link href='/about'>About</Link>
+      </div>
+      <div class='pure-u-1 pure-u-lg-1-5 text-center'>
+        <Link href='/quotes'>Quotes</Link>
       </div>
     </nav>
   )

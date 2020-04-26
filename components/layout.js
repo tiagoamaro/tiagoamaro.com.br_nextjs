@@ -1,5 +1,6 @@
-import NavBar from '../components/navbar'
+import Container from '../components/container'
 import Head from 'next/head'
+import NavBar from '../components/navbar'
 
 export default function Layout ({ children }) {
   return (
@@ -14,8 +15,10 @@ export default function Layout ({ children }) {
         {/* Fonts */}
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Berkshire+Swash' />
       </Head>
-      <NavBar />
-      {children}
+      <Container>
+        <NavBar />
+        {children}
+      </Container>
     </>
   )
 }
