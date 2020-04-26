@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import * as matter from 'gray-matter'
 
 const POST_SLUG_REGEX = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})-(?<slug>.*)\.md/
 
@@ -18,39 +19,36 @@ const postSlug = (filename) => {
 
 export default function Posts ({ posts }) {
   const postLinks = () => {
-    posts.map(post => {
+    return posts.map(post => {
+      const { title } = post
       const slug = postSlug(post.filename)
-      return <Link key={slug}><a>Link</a></Link>
+      return <Link key={slug} href={slug}><a>{title}</a></Link>
     })
   }
-
-  postLinks()
 
   return (
     <Layout>
       <NextSeo title='Posts' />
-      List of posts
+      {postLinks()}
     </Layout>
   )
 }
 
 export async function getStaticProps () {
   const postsDirectory = path.join(process.cwd(), 'posts')
-  const filenames = fs.readdirSync(postsDirectory)
+  const filenames = fs.readdirSync(postsDirectory).reverse() // Files are read in ASC order by name. We want DESC
 
   const posts = filenames.map(filename => {
     const filePath = path.join(postsDirectory, filename)
     const fileContents = fs.readFileSync(filePath, 'utf8')
 
-    console.log(fileContents)
+    const { title } = matter(fileContents).data
 
     return {
       filename,
-      title: 'Loroteiro'
+      title
     }
   })
-
-  console.log(posts)
 
   return {
     props: {
