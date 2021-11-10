@@ -19,6 +19,6 @@
     "remark-html": "^15.0.0"
   },
   "devDependencies": {
-    "standard": "^14.3.3"
+    "standard": "^16.0.4"
   }
 }
