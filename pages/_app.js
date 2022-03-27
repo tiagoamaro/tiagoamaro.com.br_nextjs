@@ -1,3 +1,4 @@
+import "../styles/globals.css"
 import { DefaultSeo } from 'next-seo'
 
 export default function MyApp ({ Component, pageProps }) {
