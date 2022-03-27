@@ -1,3 +1,5 @@
+import { Twitter } from "../components/Twitter"
+
 export default function Home() {
-  return <div>Hello</div>
+  return <Twitter />
 }
