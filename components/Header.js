@@ -10,16 +10,16 @@ export const Header = () => {
           </a>
         </Link>
         <Link href="/">
-          <a className="hover:font-bold hover:underline">Home</a>
+          <a className="hover:underline">Home</a>
         </Link>
         <Link href="about">
-          <a className="hover:font-bold hover:underline">About</a>
+          <a className="hover:underline">About</a>
         </Link>
         <Link href="posts">
-          <a className="hover:font-bold hover:underline">Posts</a>
+          <a className="hover:underline">Posts</a>
         </Link>
         <Link href="quotes">
-          <a className="hover:font-bold hover:underline">Quotes</a>
+          <a className="hover:underline">Quotes</a>
         </Link>
       </div>
     </header>
