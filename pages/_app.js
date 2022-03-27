@@ -1,5 +1,5 @@
-import "../styles/globals.css";
-import { DefaultSeo } from "next-seo";
+import "../styles/globals.css"
+import { DefaultSeo } from "next-seo"
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -10,5 +10,5 @@ export default function MyApp({ Component, pageProps }) {
       />
       <Component {...pageProps} />
     </>
-  );
+  )
 }
