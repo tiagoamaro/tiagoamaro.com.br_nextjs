@@ -7,6 +7,7 @@ export default function MyApp({ Component, pageProps }) {
     <Layout>
       <DefaultSeo
         description="Tiago Padrela Amaro personal website. Geek and coder. Twitter: @tiagopadrela"
+        defaultTitle="Tiago Padrela Amaro"
         titleTemplate="%s | Tiago Padrela Amaro"
       />
       <Component {...pageProps} />
