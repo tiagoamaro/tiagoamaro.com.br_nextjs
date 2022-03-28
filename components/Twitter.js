@@ -1,5 +1,7 @@
 import { useEffect } from "react"
 
+// TODO: Twitter widget JS raises an error when unmounting the component in the middle
+// TODO: of its lifecycle. This should be fixed.
 export const Twitter = () => {
   useEffect(() => {
     const s = document.createElement("script")
