@@ -46,10 +46,10 @@ export const Quotes = () => {
       <div className="border-l-2 border-gray-300 pl-4">
         <blockquote>
           Nous sommes des nains juchés sur les épaules de géants. <br />
-          Nous voyons ainsi davantage et plus loin qu'eux, non parce que notre
-          vue est plus aiguë ou notre taille plus haute, mais parce qu'ils nous
-          portent en l'air et nous élèvent de toute leur hauteur gigantesque.{" "}
-          <br />
+          Nous voyons ainsi davantage et plus loin qu&apos;eux, non parce que
+          notre vue est plus aiguë ou notre taille plus haute, mais parce
+          qu&apos;ils nous portent en l&apos;air et nous élèvent de toute leur
+          hauteur gigantesque. <br />
           (We are dwarfs perched on the shoulders of giants, <br /> so we see
           more and more than they do, not because our sight is sharper or our
           height higher, but because they carry us up and we raise their
@@ -87,8 +87,8 @@ export const Quotes = () => {
           does what we expect it to do. <br />
           And that translates directly into avoiding bugs and meeting deadlines.{" "}
           <br />
-          The more effective our models, the more work we're able to get done.{" "}
-          <br />
+          The more effective our models, the more work we&apos;re able to get
+          done. <br />
           <small>
             <cite>Avdi Grimm</cite>
           </small>
@@ -99,11 +99,12 @@ export const Quotes = () => {
 
       <div className="border-l-2 border-gray-300 pl-4">
         <blockquote>
-          Don't write things you don't believe. <br />
+          Don&apos;t write things you don&apos;t believe. <br />
           And write them carefully. <br />
-          And write them knowing that, you're not to write them unless you're
-          willing to stand behind them. <br />
-          Then understand that if you're called to stand behind them, <br />
+          And write them knowing that, you&apos;re not to write them unless
+          you&apos;re willing to stand behind them. <br />
+          Then understand that if you&apos;re called to stand behind them,{" "}
+          <br />
           That is in fact how you will become educated. <br />
           <small>
             <cite>Jordan Peterson</cite>
@@ -170,7 +171,7 @@ export const Quotes = () => {
           <br />
           Readability counts.
           <br />
-          Special cases aren't special enough to break the rules.
+          Special cases aren&apos;t special enough to break the rules.
           <br />
           Although practicality beats purity.
           <br />
@@ -182,17 +183,18 @@ export const Quotes = () => {
           <br />
           There should be one-- and preferably only one --obvious way to do it.
           <br />
-          Although that way may not be obvious at first unless you're Dutch.
+          Although that way may not be obvious at first unless you&apos;re
+          Dutch.
           <br />
           Now is better than never.
           <br />
           Although never is often better than *right* now.
           <br />
-          If the implementation is hard to explain, it's a bad idea.
+          If the implementation is hard to explain, it&apos;s a bad idea.
           <br />
           If the implementation is easy to explain, it may be a good idea.
           <br />
-          Namespaces are one honking great idea -- let's do more of those!
+          Namespaces are one honking great idea -- let&apos;s do more of those!
           <br />
           <small>
             <cite>The Zen of Python, by Tim Peters</cite>
@@ -248,12 +250,12 @@ export const Quotes = () => {
           Building an object-oriented application means inventing appropriate
           machinery. We represent real-world information, processes,
           interactions, relationships, even errors, by inventing objects that
-          don't exist in the real world. We give life and intelligence to
+          don&apos;t exist in the real world. We give life and intelligence to
           inanimate things. We take difficult-to-comprehend real-world objects
           and split them into simpler, more manageable software ones. We invent
           new objects. Each has a specific role to play in the application. Our
           measure of success lies in how clearly we invent a software reality
-          that satisfies our application's requirements -- and not in how
+          that satisfies our application&apos;s requirements -- and not in how
           closely it remembers the real world.
           <br />
           <small>
@@ -267,8 +269,8 @@ export const Quotes = () => {
       <div className="border-l-2 border-gray-300 pl-4">
         <blockquote>
           If we accept that we reflect values into code whether we want or not,
-          we can't look into the monitor. We have to look into the mirror. If we
-          can be mindful of the values we reflect into our code; if we can
+          we can&apos;t look into the monitor. We have to look into the mirror.
+          If we can be mindful of the values we reflect into our code; if we can
           approach our craft with humility and an understanding of our
           limitations; if we can admit that cleverness is no substitute for
           compassion; if we can acknowledge that we always have a perspective
