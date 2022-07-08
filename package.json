@@ -13,7 +13,7 @@
     "lint-and-format": "npm run format:fix && npm run lint:fix && npm run format && npm run lint"
   },
   "dependencies": {
-    "next": "12.2.0",
+    "next": "12.2.1",
     "next-seo": "5.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -21,11 +21,11 @@
   "devDependencies": {
     "autoprefixer": "10.4.7",
     "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0",
+    "eslint-config-next": "12.2.1",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "8.4.14",
     "prettier": "2.7.1",
-    "prettier-plugin-tailwindcss": "0.1.11",
-    "tailwindcss": "3.1.5"
+    "tailwindcss": "3.1.5",
+    "prettier-plugin-tailwindcss": "0.1.12"
   }
 }
