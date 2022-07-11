@@ -13,7 +13,7 @@
     "lint-and-format": "npm run format:fix && npm run lint:fix && npm run format && npm run lint"
   },
   "dependencies": {
-    "next": "12.2.1",
+    "next": "12.2.2",
     "next-seo": "5.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
